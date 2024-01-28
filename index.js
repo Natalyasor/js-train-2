@@ -3,11 +3,11 @@
 // Створюємо функцію з назвою calculateExpression, яка приймає один аргумент expression
 function calculateExpression(expression) {
   //Преревіряємо чи аргумент є рядком
-  const code = "3 + 5 * 2 ===13"
+  if (typeof expression === 'string') {
   //Якщо так повертаємо виконананий код
-  console.log(eval(code));
   // Якщо ні повертаємо текст "Argument is not a string"
-  
+  return eval(expression);
+}
 }
 
 console.log("Завдання 1 ====================================");
@@ -21,11 +21,15 @@ console.log(
 // Створюємо функцію з назвою getNumberFromString, яка приймає один аргумент s
 function getNumberFromString(s) {
   // Використовуємо функцію parseFloat для того, щоб спробувати отримати число з рядка
-  parseFloat("100.5")
+  var number = parseFloat(s);
   // Перевіряємо, чи є отримане значення числом за допомогою isNaN
-  isNaN(value)
+  if (!isNaN(number)) {
   // Якщо значення не є числом, повертаємо текст "Couldn't extract a number from the provided string."
   // Якщо значення є числом, повертаємо його
+  return number;
+} else {
+  return "Couldn't extract a number from the provided string.";
+}
 }
 
 // Виводимо результати виклику функції
@@ -44,10 +48,16 @@ console.log(
 // Створюємо функцію з назвою getIntegerFromString, яка приймає один аргумент s
 function getIntegerFromString(s) {
   // Використовуємо функцію parseInt для того, щоб спробувати отримати ціле число з рядка
-  parseInt(s)
+  var number = parseInt(s);
   // Перевіряємо, чи є отримане значення числом за допомогою isNaN
+  if (!isNaN(number)) {
   // Якщо значення не є числом, повертаємо текст "Couldn't extract an integer from the provided string."
   // Якщо значення є числом, повертаємо його
+  return number;
+}
+else {
+  return "Couldn't extract an integer from the provided string.";
+}
 }
 
 // Виводимо результати виклику функції
@@ -66,11 +76,16 @@ console.log(
 // Створюємо функцію з назвою isNumberFinite, яка приймає один аргумент - num
 function isNumberFinite(num) {
   // Використовуємо вбудовану функцію isFinite, щоб перевірити, чи є введене число скінченним.
-  if(num / x) 
-  return isFinite(num) ? true : false;
+  if (isFinite(num)) {
+  
   // Ця функція повертає true, якщо число є скінченним, і false, якщо число є нескінченним або не є числом.
   // За допомогою оператора if перевіряємо, чи є число скінченним.
   // Якщо число є скінченним, повертаємо текст "The number is finite.".
+  return "The number is finite.";
+} 
+else {
+  return "The number is not finite.";
+}
   // Якщо число не є скінченним, повертаємо текст "The number is not finite.".
 }
 
